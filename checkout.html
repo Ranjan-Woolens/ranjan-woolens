@@ -1,0 +1,17 @@
+<form id="checkoutForm">
+  <label for="name">Full Name</label>
+  <input type="text" id="name" required>
+  <label for="email">Email</label>
+  <input type="email" id="email" required>
+  <label for="address">Shipping Address</label>
+  <textarea id="address" rows="3" required></textarea>
+  <label for="payment">Payment Method</label>
+  <select id="payment" required>
+    <option value="">Select</option>
+    <option value="credit">Credit Card</option>
+    <option value="debit">Debit Card</option>
+    <option value="upi">UPI</option>
+    <option value="cod">Cash on Delivery</option>
+  </select>
+  <button type="submit">Place Order</button>
+</form>
