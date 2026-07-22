@@ -3,23 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ranjan Woolens - Woollen Dresses</title>
+  <title>Ranjan Woolens - Woollen Dress</title>
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #fdf6f0;
       margin: 0;
-      display: flex;
+      background-color: #fff;
     }
 
-    /* Sidebar Filters */
-    .filters {
-      width: 300px;
-      padding: 30px;
-      border-right: 1px solid #e0e0e0;
+    /* Header */
+    header {
+      background-color: #5a3e36;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+    }
+
+    nav {
       background-color: #fff;
-      height: 100vh;
-      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav a {
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* Page Title */
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      margin: 40px 0 20px;
+    }
+
+    /* Layout */
+    .container {
+      display: flex;
+      width: 90%;
+      margin: auto;
+      gap: 30px;
+    }
+
+    /* Filters */
+    .filters {
+      width: 250px;
+      border-right: 1px solid #e0e0e0;
+      padding-right: 20px;
     }
 
     .filters h2 {
@@ -47,21 +81,12 @@
       color: #333;
     }
 
-    /* Product Grid */
-    .main-content {
-      flex: 1;
-      padding: 40px;
-    }
-
-    .main-content h1 {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
+    /* Products */
     .products {
+      flex: 1;
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 20px;
+      gap: 25px;
     }
 
     .product {
@@ -97,23 +122,42 @@
       color: #888;
       margin-left: 5px;
     }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
-  <!-- Filter Sidebar -->
-  <div class="filters">
-    <h2>Filters</h2>
-    <div class="filter-item"><span>Product type</span><i>▼</i></div>
-    <div class="filter-item"><span>Brand</span><i>▼</i></div>
-    <div class="filter-item"><span>Price</span><i>▼</i></div>
-    <div class="filter-item"><span>Color</span><i>▼</i></div>
-    <div class="filter-item"><span>Size</span><i>▼</i></div>
-    <div class="filter-item"><span>Product rating count</span><i>▼</i></div>
-  </div>
+  <header>
+    <h2>Ranjan Woolens</h2>
+  </header>
 
-  <!-- Product Grid -->
-  <div class="main-content">
-    <h1>Woollen Dresses</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">New Arrivals</a>
+    <a href="#">Women</a>
+    <a href="#">Men</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <h1>Woollen Dress</h1>
+
+  <div class="container">
+    <!-- Filter Sidebar -->
+    <div class="filters">
+      <h2>Filters</h2>
+      <div class="filter-item"><span>Product type</span><i>▼</i></div>
+      <div class="filter-item"><span>Price</span><i>▼</i></div>
+      <div class="filter-item"><span>Color</span><i>▼</i></div>
+      <div class="filter-item"><span>Product rating count</span><i>▼</i></div>
+    </div>
+
+    <!-- Product Grid -->
     <div class="products">
       <div class="product">
         <span class="discount">SAVE 57%</span>
@@ -128,7 +172,25 @@
         <h3>Pink Woollen Dress</h3>
         <p class="price">₹899 <span class="old-price">₹2,999</span></p>
       </div>
+
+      <div class="product">
+        <span class="discount">SAVE 57%</span>
+        <img src="images/woolen_brown.jpg" alt="Brown Woollen Dress">
+        <h3>Brown Woollen Dress</h3>
+        <p class="price">₹1,289 <span class="old-price">₹2,999</span></p>
+      </div>
+
+      <div class="product">
+        <span class="discount">SAVE 59%</span>
+        <img src="images/woolen_black.jpg" alt="Black Woollen Dress">
+        <h3>Black Woollen Dress</h3>
+        <p class="price">₹1,199 <span class="old-price">₹2,999</span></p>
+      </div>
     </div>
   </div>
+
+  <footer>
+    <p>© 2026 Ranjan Woolens | All Rights Reserved</p>
+  </footer>
 </body>
 </html>
