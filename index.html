@@ -3,15 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ranjan Woolens - Woolen Clothing Store</title>
+  <title>Ranjan Woolens - Woollen Dresses</title>
   <style>
-    body { font-family: 'Poppins', sans-serif; background-color: #fdf6f0; margin: 0; }
+    body { font-family: 'Poppins', sans-serif; margin: 0; background-color: #fdf6f0; }
     header { background-color: #5a3e36; color: white; text-align: center; padding: 20px; }
     nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-    .product { background: white; margin: 20px; padding: 15px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h1 { text-align: center; margin: 30px 0; }
+    .container { display: flex; }
+    .filters { width: 20%; padding: 20px; background-color: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    .filters h3 { margin-bottom: 10px; }
+    .products { width: 80%; display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; padding: 20px; }
+    .product { background: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); padding: 15px; text-align: center; }
     .product img { width: 100%; border-radius: 8px; }
-    button { background-color: #5a3e36; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; }
-    footer { background-color: #333; color: white; text-align: center; padding: 10px; }
+    .discount { background-color: #5a3e36; color: white; padding: 5px 10px; border-radius: 5px; font-size: 12px; display: inline-block; margin-bottom: 10px; }
+    .price { font-weight: bold; color: #333; }
+    .old-price { text-decoration: line-through; color: #888; margin-left: 5px; }
+    footer { background-color: #333; color: white; text-align: center; padding: 10px; margin-top: 20px; }
   </style>
 </head>
 <body>
@@ -24,15 +31,34 @@
     </nav>
   </header>
 
-  <section>
-    <div class="product">
-      <img src="woolen_jama.jpg" alt="Woolen Coat">
-      <h2>Woolen Coat</h2>
-      <p>Made from 100% pure wool, perfect for winter.</p>
-      <p><strong>Price:</strong> ₹1200</p>
-      <button>Buy Now</button>
-    </div>
-  </section>
+  <h1>Woollen Dresses</h1>
+
+  <div class="container">
+    <aside class="filters">
+      <h3>Filters</h3>
+      <p>Product Type</p>
+      <p>Brand</p>
+      <p>Price</p>
+      <p>Color</p>
+      <p>Size</p>
+    </aside>
+
+    <section class="products">
+      <div class="product">
+        <span class="discount">SAVE 57%</span>
+        <img src="images/woolen_jama.jpg" alt="Red Woollen Dress">
+        <h3>Red Woollen Dress</h3>
+        <p class="price">₹1,289 <span class="old-price">₹2,999</span></p>
+      </div>
+
+      <div class="product">
+        <span class="discount">SAVE 70%</span>
+        <img src="images/woolen_pink.jpg" alt="Pink Woollen Dress">
+        <h3>Pink Woollen Dress</h3>
+        <p class="price">₹899 <span class="old-price">₹2,999</span></p>
+      </div>
+    </section>
+  </div>
 
   <footer>
     <p>© 2026 Ranjan Woolens | All Rights Reserved</p>
