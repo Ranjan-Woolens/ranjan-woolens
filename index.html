@@ -3,22 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Filters - Ranjan Woolens</title>
+  <title>Ranjan Woolens - Woollen Dresses</title>
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #fff;
+      background-color: #fdf6f0;
       margin: 0;
-      padding: 40px;
+      display: flex;
     }
 
+    /* Sidebar Filters */
     .filters {
       width: 300px;
-      border: none;
+      padding: 30px;
+      border-right: 1px solid #e0e0e0;
+      background-color: #fff;
+      height: 100vh;
+      box-sizing: border-box;
     }
 
     .filters h2 {
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 600;
       margin-bottom: 20px;
     }
@@ -40,15 +45,62 @@
     .filter-item i {
       font-size: 14px;
       color: #333;
-      transition: transform 0.3s ease;
     }
 
-    .filter-item:hover i {
-      transform: rotate(180deg);
+    /* Product Grid */
+    .main-content {
+      flex: 1;
+      padding: 40px;
+    }
+
+    .main-content h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 15px;
+      text-align: center;
+    }
+
+    .product img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .discount {
+      background-color: #5a3e36;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 12px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #333;
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      color: #888;
+      margin-left: 5px;
     }
   </style>
 </head>
 <body>
+  <!-- Filter Sidebar -->
   <div class="filters">
     <h2>Filters</h2>
     <div class="filter-item"><span>Product type</span><i>▼</i></div>
@@ -57,6 +109,26 @@
     <div class="filter-item"><span>Color</span><i>▼</i></div>
     <div class="filter-item"><span>Size</span><i>▼</i></div>
     <div class="filter-item"><span>Product rating count</span><i>▼</i></div>
+  </div>
+
+  <!-- Product Grid -->
+  <div class="main-content">
+    <h1>Woollen Dresses</h1>
+    <div class="products">
+      <div class="product">
+        <span class="discount">SAVE 57%</span>
+        <img src="images/woolen_jama.jpg" alt="Red Woollen Dress">
+        <h3>Red Woollen Dress</h3>
+        <p class="price">₹1,289 <span class="old-price">₹2,999</span></p>
+      </div>
+
+      <div class="product">
+        <span class="discount">SAVE 70%</span>
+        <img src="images/woolen_pink.jpg" alt="Pink Woollen Dress">
+        <h3>Pink Woollen Dress</h3>
+        <p class="price">₹899 <span class="old-price">₹2,999</span></p>
+      </div>
+    </div>
   </div>
 </body>
 </html>
