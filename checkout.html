@@ -1,3 +1,9 @@
+<div id="cart-summary">
+  <h3>Your Cart</h3>
+  <ul id="cart-items"></ul>
+  <p><strong>Total:</strong> ₹<span id="cart-total">0</span></p>
+</div>
+
 <form id="checkoutForm">
   <label for="name">Full Name</label>
   <input type="text" id="name" required>
@@ -16,6 +22,20 @@
   <button type="submit">Place Order</button>
 </form>
 <script>
+  // Cart data load karo (agar localStorage use kiya ho)
+  const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+  const cartList = document.getElementById('cart-items');
+  const cartTotal = document.getElementById('cart-total');
+  
+  let total = 0;
+  cartItems.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = `${item.name} - ₹${item.price}`;
+    cartList.appendChild(li);
+    total += item.price;
+  });
+  cartTotal.textContent = total;
+
   document.getElementById('checkoutForm').addEventListener('submit', function(e) {
     e.preventDefault();
     alert('✅ Order placed successfully!');
