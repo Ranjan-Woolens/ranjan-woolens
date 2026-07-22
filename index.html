@@ -164,6 +164,8 @@
         <img src="images/woolen_jama.jpg" alt="Red Woollen Dress">
         <h3>Red Woollen Dress</h3>
         <p class="price">₹1,289 <span class="old-price">₹2,999</span></p>
+        <button onclick="addToCart('Red Woollen Dress', 1289)">Add to Cart</button>
+
       </div>
 
       <div class="product">
@@ -171,6 +173,8 @@
         <img src="images/woolen_pink.jpg" alt="Pink Woollen Dress">
         <h3>Pink Woollen Dress</h3>
         <p class="price">₹899 <span class="old-price">₹2,999</span></p>
+        <button onclick="addToCart('Pink Woollen Dress', 899)">Add to Cart</button>
+
       </div>
 
       <div class="product">
@@ -178,6 +182,8 @@
         <img src="images/woolen_brown.jpg" alt="Brown Woollen Dress">
         <h3>Brown Woollen Dress</h3>
         <p class="price">₹1,289 <span class="old-price">₹2,999</span></p>
+        <button onclick="addToCart('Brown Woollen Dress', 1289)">Add to Cart</button>
+
       </div>
 
       <div class="product">
@@ -185,12 +191,43 @@
         <img src="images/woolen_black.jpg" alt="Black Woollen Dress">
         <h3>Black Woollen Dress</h3>
         <p class="price">₹1,199 <span class="old-price">₹2,999</span></p>
+        <button onclick="addToCart('Black Woollen Dress', 1199)">Add to Cart</button>
+
       </div>
     </div>
   </div>
-
+      <!-- Cart badge -->
+      <div id="cart" style="position:fixed;top:20px;right:20px;background:#5a3e36;color:white;padding:10px 20px;border-radius:5px;cursor:pointer;">
+        🛒 Cart: <span id="cart-count">0</span>
+      </div>
+      <!-- JavaScript code hamesha yahan -->
   <footer>
     <p>© 2026 Ranjan Woolens | All Rights Reserved</p>
   </footer>
+      <script>
+        let cartCount = 0;
+        let cartItems = [];
+      
+        function addToCart(name, price) {
+          cartCount++;
+          cartItems.push({ name, price });
+          document.getElementById('cart-count').innerText = cartCount;
+          alert(`${name} added to cart!`);
+        }
+      
+        document.getElementById('cart').addEventListener('click', () => {
+          if (cartItems.length === 0) {
+            alert('Your cart is empty!');
+          } else {
+            let summary = '🛍️ Your Cart:\n\n';
+            cartItems.forEach(item => summary += `${item.name} - ₹${item.price}\n`);
+            summary += '\nProceed to checkout?';
+            alert(summary);
+          }
+        });
+      </script>
+</body>
+</html>
+
 </body>
 </html>
