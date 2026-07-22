@@ -223,6 +223,8 @@
             cartItems.forEach(item => summary += `${item.name} - ₹${item.price}\n`);
             summary += '\nProceed to checkout?';
             alert(summary);
+            window.location.href = 'checkout.html';
+
           }
         });
       </script>
