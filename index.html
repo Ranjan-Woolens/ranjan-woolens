@@ -54,6 +54,34 @@
     .confirmation { text-align: center; }
     .confirmation h2 { color: #b12704; }
     footer { background-color: #131921; color: white; text-align: center; padding: 10px; margin-top: 30px; }
+    #popup {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+  }
+  .popup-content {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    width: 300px;
+  }
+  .popup-content h3 { color: #b12704; margin-bottom: 15px; }
+  .popup-content button {
+    background-color: #febd69;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    margin: 5px;
+  }
+
   </style>
 </head>
 <body>
@@ -120,6 +148,15 @@
     <p>We’ll send updates to your email soon.</p>
     <button onclick="continueShopping()">Continue Shopping</button>
   </div>
+  <!-- Popup -->
+  <div id="popup">
+    <div class="popup-content">
+      <h3>✅ Order Placed Successfully!</h3>
+      <button onclick="backToProducts()">Back to Product Page</button>
+      <button onclick="viewOrders()">Order History</button>
+    </div>
+  </div>
+
 
   <footer>
     <p>© 2026 Ranjan Woolens | All Rights Reserved</p>
@@ -167,6 +204,33 @@
       document.getElementById('cart-section').style.display = 'none';
       document.getElementById('confirmation').style.display = 'block';
     });
+    document.getElementById('checkoutForm').addEventListener('submit', e => {
+      e.preventDefault();
+    
+      // cart clear
+      localStorage.removeItem('cartItems');
+      cartItems = [];
+      cartCount = 0;
+      document.getElementById('cart-count').innerText = cartCount;
+    
+      // cart section hide
+      document.getElementById('cart-section').style.display = 'none';
+    
+      // popup show
+      document.getElementById('popup').style.display = 'flex';
+    });
+    
+    // popup buttons
+    function backToProducts() {
+      document.getElementById('popup').style.display = 'none';
+      document.getElementById('product-section').style.display = 'flex';
+    }
+    
+    function viewOrders() {
+      alert("📦 Order history page banani hogi — abhi ke liye yahan redirect kar sakte ho.");
+      // Example: window.location.href = "orders.html";
+    }
+
 
     function continueShopping() {
       document.getElementById('confirmation').style.display = 'none';
