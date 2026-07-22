@@ -15,3 +15,10 @@
   </select>
   <button type="submit">Place Order</button>
 </form>
+<script>
+  document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('✅ Order placed successfully!');
+    window.location.href = 'index.html'; // wapas home bhej dega
+  });
+</script>
